@@ -1,0 +1,64 @@
+/* GENERAL */
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body{
+  background-color: #001632;
+  color: white;
+  padding: 100px;
+}
+/* COMMON RULES */
+h1, h2{
+  text-align: center;
+}
+h1,
+h2,
+.container .info,
+.container .setting,
+.container .setting button{
+  margin-top: 20px;
+}
+.container .info,
+.container .setting,
+.container .setting button{
+  border-radius: 5px;
+}
+/* SINGLE STYLE */
+h1{
+  color: #808B99;
+}
+.container{
+  width: 650px;
+  margin: 0 auto;
+}
+.container .info{
+  background-color: #CFF5FC;
+  color: #1D616F;
+  padding: 5px 10px;
+  line-height: 40px;
+}
+.container .setting{
+  background-color: #F8F9FA;
+  color: black;
+  padding: 15px;
+}
+.container .setting span{
+  margin-right: 300px;
+}
+.container .setting button{
+  padding: 7px 12px;
+  border: none;
+  margin-bottom: 20px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+button.submit{
+ background-color: #0D6EFD;
+}
+button.reset{
+  background-color: #6C757D;
+}
