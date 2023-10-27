@@ -1,14 +1,32 @@
 <?php
-
-$saluto = "ciao da php";
-
+//Generatore di Password
+function randomPswGen(){
+  /* data */
+  $uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  $lowercase = 'abcdefghijklmnopqrstuvwxyz';
+  $numbers = '0123456789';
+  $specialChars = '!@#$%^&*()_-+=[]{}|<>?';
+  $allChars = $uppercase . $lowercase . $numbers . $specialChars;
+  /* Passwold base */
+  $password = '';
+  /* Passwold base set*/
+  $password .= $uppercase[rand(0,strlen($uppercase)-1)];
+  $password .= $lowercase[rand(0,strlen($lowercase)-1)];
+  $password .= $numbers[rand(0,strlen($numbers)-1)];
+  $password .= $specialChars[rand(0,strlen($specialChars)-1)];
+  return $password;
+}
+echo  randomPswGen();
+//Controllo se è stato selezionato un numero
 if(isset($_POST['numSelected'])){
+  //Controllo validita lunghezza desiderata 
   if($_POST['numSelected'] >= 8 && $_POST['numSelected'] <= 32){
     echo "Il numero selezionato è:" . $_POST['numSelected'];
   }else{
     echo "Seleziona una lunghezza di almeno 3 caratteri o inferiore ai 32 caratteri.";
   }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
