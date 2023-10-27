@@ -47,7 +47,7 @@ h1{
 .container .setting span{
   margin-right: 300px;
 }
-.container .setting button{
+button{
   padding: 7px 12px;
   border: none;
   margin-bottom: 20px;

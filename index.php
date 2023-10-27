@@ -25,13 +25,15 @@ function randomPswGen($numSelected){
 if(isset($_POST['numSelected'])){
   //Controllo validita lunghezza desiderata
   if($_POST['numSelected'] >= 8 && $_POST['numSelected'] <= 32){
-    echo "La password generata è:" . randomPswGen($_POST['numSelected']);
+    session_start();
+    $_SESSION['password_sended'] = randomPswGen($_POST['numSelected']);
+    header("Location: ./pswPage.php");
   }else{
     echo "Seleziona una lunghezza di almeno 3 caratteri o inferiore ai 32 caratteri.";
   }
 }
 
-include __DIR__ . '/partials/head.php'
+include_once __DIR__ . '/partials/head.php';
 ?>
 <body>
   <h1>Strong Password Generator</h1>
