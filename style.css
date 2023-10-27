@@ -62,3 +62,7 @@ button.submit{
 button.reset{
   background-color: #6C757D;
 }
+.error{
+  text-align: center;
+  color: red;
+}

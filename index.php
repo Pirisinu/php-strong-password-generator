@@ -10,7 +10,7 @@ if(isset($_POST['numSelected'])){
     $_SESSION['password_sended'] = randomPswGen($_POST['numSelected']);
     header("Location: ./pswPage.php");
   }else{
-    echo "Seleziona una lunghezza di almeno 3 caratteri o inferiore ai 32 caratteri.";
+    $error_message = "La lunghezza deve essere compresa tra 8 e 32 caratteri.";
   }
 }
 //Import head
@@ -30,6 +30,11 @@ include_once __DIR__ . '/partials/head.php';
       <button class="submit" type="submit">Invia</button>
       <button class="reset" type="reset">Annulla</button>
     </form>
+    <?php
+    if (isset($error_message)) {
+        echo '<p class="error">' . $error_message . '</p>';
+    }
+    ?>
   </div>
 </body>
 </html>
