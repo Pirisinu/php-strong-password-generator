@@ -13,6 +13,8 @@
 <body>
   <h1>Password Generata</h1>
   <h2><strong><?php echo $text ?></strong></h2>
-  <button class="submit">Torna indietro</button>
+  <form action="index.php">
+    <button type="submit" class="submit">Torna indietro</button>
+  </form>
 </body>
 </html>
