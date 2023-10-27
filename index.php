@@ -2,8 +2,14 @@
 
 $saluto = "ciao da php";
 
+if(isset($_POST['numSelected'])){
+  if($_POST['numSelected'] >= 8 && $_POST['numSelected'] <= 32){
+    echo "Il numero selezionato è:" . $_POST['numSelected'];
+  }else{
+    echo "Seleziona una lunghezza di almeno 3 caratteri o inferiore ai 32 caratteri.";
+  }
+}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,9 +26,9 @@ $saluto = "ciao da php";
     <div class="info">
       <p>Scegliere una password con un minimo di 8 caratteri e un massimo di 32 caratteri</p>
     </div>
-    <form class="setting">
+    <form action="index.php" method="POST" class="setting">
       <span>Lunghezza password:</span>
-      <input type="number"><br>
+      <input name="numSelected" type="number"><br>
 
       <button class="submit" type="submit">Invia</button>
       <button class="reset" type="reset">Annulla</button>
