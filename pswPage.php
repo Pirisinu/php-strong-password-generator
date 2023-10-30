@@ -10,9 +10,12 @@
 
   include __DIR__ . "/partials/head.php";
 ?>
+
 <body>
   <h1>Password Generata</h1>
-  <h2><strong><?php echo $text ?></strong></h2>
+  <div class="info">
+    <h2><strong><?php echo $text ?></strong></h2>
+  </div>
   <form action="index.php">
     <button type="submit" class="submit">Torna indietro</button>
   </form>

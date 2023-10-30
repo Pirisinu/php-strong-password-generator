@@ -1,6 +1,6 @@
 <?php
 //Import generatore di Password
-include_once __DIR__ . '/partials/function.php';
+require_once __DIR__ . '/partials/function.php';
 
 //Controllo se è stato selezionato un numero
 if(isset($_POST['numSelected'])){
@@ -14,14 +14,21 @@ if(isset($_POST['numSelected'])){
   }
 }
 //Import head
-include_once __DIR__ . '/partials/head.php';
+require_once __DIR__ . '/partials/head.php';
 ?>
 <body>
   <h1>Strong Password Generator</h1>
   <h2>Genera una password sicura</h2>
   <div class="container">
     <div class="info">
-      <p>Scegliere una password con un minimo di 8 caratteri e un massimo di 32 caratteri</p>
+    <?php
+    if (isset($error_message)) {
+        echo '<p class="error">' . $error_message . '</p>';
+    }else{
+      echo'<p>Scegliere una password con un minimo di 8 caratteri e un massimo di 32 caratteri</p>';
+    }
+    ?>
+
     </div>
     <form action="index.php" method="POST" class="setting">
       <span>Lunghezza password:</span>
@@ -30,11 +37,6 @@ include_once __DIR__ . '/partials/head.php';
       <button class="submit" type="submit">Invia</button>
       <button class="reset" type="reset">Annulla</button>
     </form>
-    <?php
-    if (isset($error_message)) {
-        echo '<p class="error">' . $error_message . '</p>';
-    }
-    ?>
   </div>
 </body>
 </html>

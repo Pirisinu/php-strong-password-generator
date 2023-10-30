@@ -33,11 +33,11 @@ h1{
   width: 650px;
   margin: 0 auto;
 }
-.container .info{
+.info{
   background-color: #CFF5FC;
   color: #1D616F;
   padding: 5px 10px;
-  line-height: 40px;
+
 }
 .container .setting{
   background-color: #F8F9FA;
